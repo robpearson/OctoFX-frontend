@@ -57,7 +57,7 @@ jobs:
         uses: OctopusDeploy/push-build-information-action@v3       
         with:
           version: ${{env.PACKAGE_VERSION}}
-          packages: OctoFX.FrontEnd
+          packages: octopussolutionsengineering/octofx-frontend
           
       - name: Create Octopus Release
         uses: OctopusDeploy/create-release-action@v3
@@ -65,4 +65,4 @@ jobs:
           project: OctoFX
           release_number: ${{ env.PACKAGE_VERSION }}
           release_notes: 'GitHub Commits URL: ${{ github.event.pull_request.commits_url }}'
-          git_ref: ${{ github.head_ref || github.ref_name }} 
+          git_ref: 'refs/head/FINT-4-MODERN'
