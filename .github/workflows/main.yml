@@ -56,7 +56,13 @@ jobs:
       - name: Push Build Information
         uses: OctopusDeploy/push-build-information-action@v3       
         with:
-          version: env.PACKAGE_VERSION
-          packages: |
-            OctoFX.FrontEnd
+          version: ${{env.PACKAGE_VERSION}}
+          packages: OctoFX.FrontEnd
           
+      - name: Create Octopus Release
+        uses: OctopusDeploy/create-release-action@v3
+        with: 
+          project: OctoFX
+          release_number: ${{ env.PACKAGE_VERSION }}
+          release_notes: 'GitHub Commits URL: ${{ github.event.pull_request.commits_url }}'
+          git_ref: 'FINT-4-MODERN' 
