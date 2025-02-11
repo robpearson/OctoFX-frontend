@@ -7,5 +7,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Minor change for demo purposes. Listening on port ${port}`)
+  console.log(`Bug fix for demo purposes. Listening on port ${port}`)
 })
