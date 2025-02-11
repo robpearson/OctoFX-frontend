@@ -13,7 +13,10 @@ permissions: write-all
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
+    env:
+      OCTOPUS_SPACE: 'FinTech'
+  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
