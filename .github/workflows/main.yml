@@ -39,5 +39,13 @@ jobs:
 
       - name: 'Build Docker Image'
         run: |
-              docker build . --tag ghcr.io/octopussolutionsengineering/octofx-frontend:env.PACKAGE_VERSION
-              docker push ghcr.io/octopussolutionsengineering/octofx-frontend:env.PACKAGE_VERSION
+              docker build . --tag ghcr.io/octopussolutionsengineering/octofx-frontend:${{env.PACKAGE_VERSION}}
+              docker push ghcr.io/octopussolutionsengineering/octofx-frontend:${{env.PACKAGE_VERSION}}
+
+      - name: Login to Octopus Deploy 
+        uses: OctopusDeploy/login@v1
+        with: 
+          server: https://demo.octopus.app
+          service_account_id: 6eb6b6d6-74c6-43da-b563-b1022930ed74
+
+      
