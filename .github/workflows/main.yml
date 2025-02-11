@@ -65,4 +65,4 @@ jobs:
           project: OctoFX
           release_number: ${{ env.PACKAGE_VERSION }}
           release_notes: 'GitHub Commits URL: ${{ github.event.pull_request.commits_url }}'
-          git_ref: 'refs/heads/fint-4-modern'
+          git_ref: 'refs/heads/modern'
