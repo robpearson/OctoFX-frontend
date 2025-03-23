@@ -49,8 +49,8 @@ jobs:
 
       - name: 'Build Docker Image'
         run: |
-              docker build . --tag ghcr.io/octopussolutionsengineering/octofx-frontend:${{env.PACKAGE_VERSION}}
-              docker push ghcr.io/octopussolutionsengineering/octofx-frontend:${{env.PACKAGE_VERSION}}
+              docker build . --tag ghcr.io/robpearson/octofx-frontend:${{env.PACKAGE_VERSION}}
+              docker push ghcr.io/robpearson/octofx-frontend:${{env.PACKAGE_VERSION}}
 
       - name: Login to Octopus Deploy 
         uses: OctopusDeploy/login@v1
@@ -62,7 +62,7 @@ jobs:
         uses: OctopusDeploy/push-build-information-action@v3       
         with:
           version: ${{env.PACKAGE_VERSION}}
-          packages: octopussolutionsengineering/octofx-frontend
+          packages: robpearson/octofx-frontend
           
       - name: Create Octopus Release
         uses: OctopusDeploy/create-release-action@v3
