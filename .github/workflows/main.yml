@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set Version
-        run: echo "PACKAGE_VERSION=2.10.$((620+GITHUB_RUN_NUMBER))" >> $GITHUB_ENV
+        run: echo "PACKAGE_VERSION=2025.03.12.$((GITHUB_RUN_NUMBER))" >> $GITHUB_ENV
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -67,7 +67,7 @@ jobs:
       - name: Create Octopus Release
         uses: OctopusDeploy/create-release-action@v3
         with: 
-          project: Finance
+          project: 'Suzuki Dealership Management System'
           release_number: ${{ env.PACKAGE_VERSION }}
           release_notes: 'GitHub Commits URL: ${{ github.event.pull_request.commits_url }}'
           git_ref: 'refs/heads/modern'
@@ -75,6 +75,6 @@ jobs:
       - name: Deploy a release in Octopus Deploy 🐙
         uses: OctopusDeploy/deploy-release-action@v3
         with:
-          project: 'Finance'
+          project: 'Suzuki Dealership Management System'
           release_number: ${{env.PACKAGE_VERSION}}
           environments: Development
