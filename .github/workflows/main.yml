@@ -70,7 +70,7 @@ jobs:
           project: 'Suzuki Dealership Management System'
           release_number: ${{ env.PACKAGE_VERSION }}
           release_notes: 'GitHub Commits URL: ${{ github.event.pull_request.commits_url }}'
-          git_ref: 'refs/heads/modern'
+          git_ref: 'refs/heads/maruti'
 
       - name: Deploy a release in Octopus Deploy 🐙
         uses: OctopusDeploy/deploy-release-tenanted-action@v3
@@ -78,4 +78,4 @@ jobs:
           project: 'Suzuki Dealership Management System'
           tenants: '_Internal' 
           release_number: ${{env.PACKAGE_VERSION}}
-          environments: Development
+          environment: 'Development'
