@@ -63,6 +63,7 @@ jobs:
         with:
           version: ${{env.PACKAGE_VERSION}}
           packages: robpearson/octofx-frontend
+          overwriteMode: OverwriteExisting
           
       - name: Create Octopus Release
         uses: OctopusDeploy/create-release-action@v3
