@@ -67,7 +67,7 @@ jobs:
       - name: Create Octopus Release
         uses: OctopusDeploy/create-release-action@v3
         with: 
-          project: OctoFX
+          project: Finance
           release_number: ${{ env.PACKAGE_VERSION }}
           release_notes: 'GitHub Commits URL: ${{ github.event.pull_request.commits_url }}'
           git_ref: 'refs/heads/modern'
@@ -75,6 +75,6 @@ jobs:
       - name: Deploy a release in Octopus Deploy 🐙
         uses: OctopusDeploy/deploy-release-action@v3
         with:
-          project: 'OctoFX'
+          project: 'Finance'
           release_number: ${{env.PACKAGE_VERSION}}
           environments: Development
