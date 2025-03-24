@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      OCTOPUS_SPACE: 'FinTech'
+      OCTOPUS_SPACE: 'Automotive'
   
     steps:
       - name: Checkout code
