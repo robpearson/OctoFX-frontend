@@ -73,7 +73,7 @@ jobs:
           git_ref: 'refs/heads/modern'
 
       - name: Deploy a release in Octopus Deploy 🐙
-        uses: OctopusDeploy/deploy-release-action@v3
+        uses: OctopusDeploy/deploy-release-tenanted-action@v3
         with:
           project: 'Suzuki Dealership Management System'
           tenants: '_Internal' 
