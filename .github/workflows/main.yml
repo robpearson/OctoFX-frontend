@@ -76,5 +76,6 @@ jobs:
         uses: OctopusDeploy/deploy-release-action@v3
         with:
           project: 'Suzuki Dealership Management System'
+          tenants: '_Internal' 
           release_number: ${{env.PACKAGE_VERSION}}
           environments: Development
